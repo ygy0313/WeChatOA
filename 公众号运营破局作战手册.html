@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>公众号运营破局作战手册 · 宁夏红酒个人号</title>
+<style>
+  :root{
+    --wine:#8C2332;
+    --wine-l:#B4455A;
+    --gold:#B8912F;
+    --ink:#2A2A2A;
+    --ink-2:#4A4A4A;
+    --ink-3:#7A7A7A;
+    --line:#EBE3DC;
+    --bg-soft:#FBF7F4;
+    --bg-gold:#FAF5E9;
+    --bg-red:#FBF0F2;
+    --bg-green:#F1F7F1;
+    --green:#3F7A46;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;padding:0;background:#FFFFFF;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif;
+    color:var(--ink);font-size:15px;line-height:1.85;letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px 80px;}
+
+  /* 封面 */
+  .hero{
+    background:linear-gradient(135deg,#7A1C2B 0%,#8C2332 55%,#A83648 100%);
+    padding:48px 24px 40px;margin-bottom:0;
+  }
+  .hero-in{max-width:860px;margin:0 auto;padding:0 24px;}
+  .hero .kicker{
+    display:inline-block;font-size:12px;letter-spacing:3px;color:#E9C98B;
+    border:1px solid rgba(233,201,139,.45);border-radius:2px;padding:3px 10px;margin-bottom:18px;
+  }
+  .hero h1{
+    margin:0 0 14px;font-size:29px;line-height:1.4;color:#FFFFFF;font-weight:700;letter-spacing:.5px;
+  }
+  .hero p{margin:0;color:rgba(255,255,255,.78);font-size:14px;line-height:1.9;}
+  .hero .meta{margin-top:20px;color:rgba(255,255,255,.55);font-size:12.5px;letter-spacing:1px;}
+
+  /* 标题层级 */
+  h2.sec{
+    font-size:21px;color:var(--wine);font-weight:700;margin:56px 0 6px;
+    padding-bottom:12px;border-bottom:2px solid var(--wine);letter-spacing:.5px;
+  }
+  h2.sec .num{
+    display:inline-block;background:var(--wine);color:#fff;font-size:13px;
+    padding:1px 9px;border-radius:3px;margin-right:10px;vertical-align:2px;font-weight:600;
+  }
+  .sec-sub{margin:0 0 22px;color:var(--ink-3);font-size:13px;letter-spacing:.5px;}
+  h3{font-size:16.5px;color:var(--ink);margin:34px 0 12px;font-weight:700;padding-left:12px;border-left:3px solid var(--gold);}
+  h4{font-size:15px;color:var(--wine);margin:22px 0 8px;font-weight:700;}
+  p{margin:0 0 14px;color:var(--ink-2);}
+  strong{color:var(--ink);font-weight:600;}
+  em{font-style:normal;background:linear-gradient(transparent 62%,#F5DFA8 62%);padding:0 1px;}
+
+  /* 卡片 */
+  .card{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:20px 22px;margin:18px 0;}
+  .card.gold{background:var(--bg-gold);border-color:#EFE2C4;}
+  .card.red{background:var(--bg-red);border-color:#F2DDE1;}
+  .card.green{background:var(--bg-green);border-color:#DCEBDD;}
+  .card .t{font-weight:700;color:var(--ink);margin-bottom:8px;font-size:15px;}
+  .card p:last-child{margin-bottom:0;}
+  .card.wine{background:linear-gradient(135deg,#7A1C2B,#8C2332);border:none;}
+  .card.wine .t,.card.wine p,.card.wine li{color:rgba(255,255,255,.92);}
+  .card.wine .t{color:#E9C98B;}
+
+  /* 表格 */
+  .tw{overflow-x:auto;margin:18px 0;-webkit-overflow-scrolling:touch;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:520px;}
+  th{
+    background:var(--wine);color:#fff;font-weight:600;text-align:left;
+    padding:10px 12px;font-size:13px;letter-spacing:.5px;white-space:nowrap;
+  }
+  td{padding:10px 12px;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top;line-height:1.75;}
+  tbody tr:nth-child(even){background:#FDFBF9;}
+  tbody tr:hover{background:#FBF3F4;}
+  td b,td strong{color:var(--wine);font-weight:600;}
+  .tag{
+    display:inline-block;font-size:11.5px;padding:1px 7px;border-radius:3px;
+    background:var(--bg-gold);color:#8A6D1F;border:1px solid #EFE2C4;white-space:nowrap;margin:0 2px 2px 0;
+  }
+  .tag.r{background:var(--bg-red);color:#9E2438;border-color:#F2DDE1;}
+  .tag.g{background:var(--bg-green);color:#2F6B37;border-color:#DCEBDD;}
+
+  /* 列表 */
+  ul,ol{margin:0 0 14px;padding-left:22px;}
+  li{margin-bottom:8px;color:var(--ink-2);line-height:1.8;}
+  ul.clean{list-style:none;padding-left:0;}
+  ul.clean li{padding-left:24px;position:relative;}
+  ul.clean li:before{
+    content:"";position:absolute;left:6px;top:11px;width:6px;height:6px;
+    border-radius:50%;background:var(--gold);
+  }
+  ul.check{list-style:none;padding-left:0;}
+  ul.check li{padding-left:26px;position:relative;}
+  ul.check li:before{
+    content:"✓";position:absolute;left:2px;top:0;color:var(--green);font-weight:700;font-size:14px;
+  }
+  ul.cross{list-style:none;padding-left:0;}
+  ul.cross li{padding-left:26px;position:relative;}
+  ul.cross li:before{
+    content:"✕";position:absolute;left:2px;top:0;color:#C0392B;font-weight:700;font-size:13px;
+  }
+
+  /* 漏斗 */
+  .funnel{margin:22px 0;}
+  .fl{
+    display:flex;align-items:center;gap:14px;padding:13px 18px;margin-bottom:8px;
+    border-radius:8px;background:var(--bg-soft);border-left:4px solid var(--wine);
+  }
+  .fl .n{
+    flex:0 0 26px;height:26px;border-radius:50%;background:var(--wine);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;
+  }
+  .fl .nm{flex:0 0 104px;font-weight:700;color:var(--ink);font-size:14px;}
+  .fl .st{flex:1;font-size:13px;color:var(--ink-3);}
+  .fl.bad{border-left-color:#C0392B;background:#FCF3F3;}
+  .fl.good{border-left-color:var(--green);background:var(--bg-green);}
+  .fl.warn{border-left-color:var(--gold);background:var(--bg-gold);}
+
+  /* 权重条 */
+  .bar{margin-bottom:11px;}
+  .bar .lb{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;}
+  .bar .lb b{color:var(--ink);font-weight:600;}
+  .bar .lb span{color:var(--wine);font-weight:700;}
+  .bar .trk{height:8px;background:#F2EBE6;border-radius:4px;overflow:hidden;}
+  .bar .fil{height:100%;border-radius:4px;background:linear-gradient(90deg,#8C2332,#B4455A);}
+
+  /* 引用块 */
+  .quote{
+    border-left:4px solid var(--gold);background:var(--bg-gold);
+    padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0;
+    font-size:14px;color:#6B5416;line-height:1.85;
+  }
+  .quote b{color:#5A4512;}
+
+  /* 代码/话术块 */
+  .code{
+    background:#2A2A2A;color:#EAE3DA;border-radius:8px;padding:14px 16px;
+    font-family:"SF Mono",Menlo,Consolas,monospace;font-size:13px;line-height:1.8;
+    margin:12px 0;white-space:pre-wrap;word-break:break-word;
+  }
+  .code .k{color:#E9C98B;}
+
+  /* 时间轴周 */
+  .week{
+    border:1px solid var(--line);border-radius:10px;margin:14px 0;overflow:hidden;
+  }
+  .week .hd{
+    background:var(--bg-soft);padding:10px 16px;font-weight:700;color:var(--wine);
+    font-size:14px;border-bottom:1px solid var(--line);
+  }
+  .week .bd{padding:14px 16px;}
+  .week .bd .row{display:flex;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line);}
+  .week .bd .row:last-child{border-bottom:none;padding-bottom:0;}
+  .week .bd .d{flex:0 0 74px;color:var(--wine);font-weight:700;font-size:13px;}
+  .week .bd .c{flex:1;font-size:13.5px;color:var(--ink-2);line-height:1.75;}
+  .week .bd .c b{color:var(--ink);}
+
+  hr{border:none;border-top:1px solid var(--line);margin:44px 0;}
+  .foot{text-align:center;color:var(--ink-3);font-size:12.5px;letter-spacing:1px;margin-top:50px;}
+  .foot .l{color:var(--gold);font-size:13px;}
+  @media print{
+    .hero{background:#8C2332 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .wrap{padding-bottom:20px;}
+    h2.sec{page-break-after:avoid;}
+    .week,.card,table{page-break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-in">
+    <div class="kicker">冷启动破局版</div>
+    <h1>公众号运营破局作战手册</h1>
+    <p>适用账号：宁夏红酒个人号 ｜ 现状：粉丝 &lt;500，单篇阅读几十 ｜ 目标：打开率 · 完读率 · 互动活跃 · 涨粉转化</p>
+    <div class="meta">2026-10-01 · 号运运 出品</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<div class="card wine">
+  <div class="t">先给结论</div>
+  <p>你现在的问题<strong style="color:#fff">不是内容差，是推荐池没启动</strong>。</p>
+  <p>2026 年公众号已经是「订阅 + 算法」双引擎：订阅流量只占 <strong style="color:#fff">25-30%</strong>，算法推荐占 <strong style="color:#fff">45-60%</strong>。算法不看你是大号还是小号，只看完读率、分享率、点击率、关键词匹配这四项数据。</p>
+  <p>粉丝不到 500，按 30-50% 打开率算，纯订阅只能撑起 50-150 次曝光——<strong style="color:#fff">这正好就是你「阅读几十」的来源</strong>。也就是说：你的订阅基本盘是正常的，缺的是那 45-60% 的免费推荐流量。这是好事，因为推荐流量不看粉丝数，只看内容标签和数据信号。</p>
+</div>
+
+<!-- ============ 0 ============ -->
+<h2 class="sec"><span class="num">诊断</span>六环漏斗：问题到底卡在哪一环</h2>
+<p class="sec-sub">把「读者从看到你的文章 → 变成你的顾客」拆成 6 环，逐环对照你的现状</p>
+
+<div class="funnel">
+  <div class="fl bad">
+    <div class="n">1</div><div class="nm">曝光</div>
+    <div class="st">订阅 <span>✅ 正常</span> ｜ 推荐流量 <span style="color:#C0392B">❌ 几乎为零</span> ｜ 搜一搜 <span style="color:#C0392B">❌ 未埋词</span> ｜ 外部导流 <span style="color:#C0392B">❌ 未打通</span> —— <strong>这是你的主战场</strong></div>
+  </div>
+  <div class="fl warn">
+    <div class="n">2</div><div class="nm">打开</div>
+    <div class="st">标题是小红书式钩子，没埋搜索词；封面为纯文字卡，缺乏"酒"的视觉信号 → 点击率吃亏</div>
+  </div>
+  <div class="fl bad">
+    <div class="n">3</div><div class="nm">完读</div>
+    <div class="st"><span style="color:#C0392B">全篇零配图</span>、导语卡剧透全文、结构过于均匀 → 完读率（权重 35%，第一指标）严重失分</div>
+  </div>
+  <div class="fl bad">
+    <div class="n">4</div><div class="nm">互动</div>
+    <div class="st">文末无提问、无关键词钩子、无在看引导 → 分享/在看（权重 35%）拿不到，算法判定"无人需要"</div>
+  </div>
+  <div class="fl warn">
+    <div class="n">5</div><div class="nm">沉淀</div>
+    <div class="st">菜单、关键词自动回复、合集标签、常读用户体系未建立 → 来了留不住</div>
+  </div>
+  <div class="fl warn">
+    <div class="n">6</div><div class="nm">转化</div>
+    <div class="st">文章 → 淘宝店铺 / 私域 / 品鉴会的路径没有明确出口，读者想买也不知道去哪</div>
+  </div>
+</div>
+
+<div class="quote">
+  <b>一句话策略：</b>第 1 环用「搜一搜 + 外部导流」补流量，第 2-4 环用「标题埋词 + 配图节奏 + 文末互动三件套」把算法权重拿满，第 5-6 环把流量沉成资产。前 4 周不要想转化，先让算法认出你是谁。
+</div>
+
+<h3>你那篇《3步用AI选口粮酒》—— 8 个具体问题</h3>
+<p>这篇稿子的底子不差（深色导语卡有质感、金句加粗、排版干净），但以公众号的标准看，有 8 个地方在直接拉低完读率和推荐概率：</p>
+
+<div class="tw">
+<table>
+<thead><tr><th style="width:34px">#</th><th style="width:150px">问题</th><th>为什么扣分</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><b>标题没埋搜索词</b></td><td>「别再瞎买了」是小红书式钩子。公众号读者是「订阅 + 搜索」驱动，标题里没有「红酒怎么选」「口粮酒推荐」这类真实搜索词，等于放弃搜一搜 3 亿日活的长尾流量</td></tr>
+<tr><td>2</td><td><b>全篇零配图</b></td><td>纯文字读 1500 字的完读率极低。规则：每 300-400 字一张图，全文 4-6 张，用来切分段落、给视觉休息</td></tr>
+<tr><td>3</td><td><b>导语卡剧透全文</b></td><td>深色卡里已经把「三步」讲完了，读者没有往下翻的动机。<b>导语的任务是制造缺口，不是给答案</b></td></tr>
+<tr><td>4</td><td><b>结构过于均匀</b></td><td>三步平铺、每步字数相近，没有案例、没有反转、没有自嘲。你的「品酒界段子手」人设在正文里完全没露面</td></tr>
+<tr><td>5</td><td><b>零真实证据</b></td><td>全流程没有出现一个真实酒款、真实价格、真实饮用体感。「前大厂逻辑驱动」的可信感没落地——这恰恰是你最强的差异化</td></tr>
+<tr><td>6</td><td><b>结尾太弱</b></td><td>只写了「欢迎关注不迷路」。缺：具体提问 + 关键词钩子 + 在看理由 + 下一篇预告</td></tr>
+<tr><td>7</td><td><b>没挂合集标签</b></td><td>发布时应挂满 5 个高匹配标签，让算法认出你的内容领域。不挂 = 算法不知道推给谁</td></tr>
+<tr><td>8</td><td><b>没手写摘要</b></td><td>不填摘要，系统抓正文首段（也就是你的导语卡），在信息流里几乎没有吸引力。摘要要手写 50-80 字</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+
+<!-- ============ 1 ============ -->
+<h2 class="sec"><span class="num">01</span>先吃透 2026 的算法账本</h2>
+<p class="sec-sub">所有优化动作，都是为了喂饱下面这几项指标</p>
+
+<h3>算法权重表（业界公认估算）</h3>
+<div class="bar"><div class="lb"><b>完读率</b><span>~35%</span></div><div class="trk"><div class="fil" style="width:35%"></div></div></div>
+<div class="bar"><div class="lb"><b>分享率 / 在看数</b><span>~35%</span></div><div class="trk"><div class="fil" style="width:35%"></div></div></div>
+<div class="bar"><div class="lb"><b>点击率（标题 + 封面）</b><span>~20%</span></div><div class="trk"><div class="fil" style="width:20%"></div></div></div>
+<div class="bar"><div class="lb"><b>关键词匹配（搜一搜）</b><span>~20%</span></div><div class="trk"><div class="fil" style="width:20%"></div></div></div>
+<div class="bar"><div class="lb"><b>收藏率</b><span>~20%</span></div><div class="trk"><div class="fil" style="width:20%"></div></div></div>
+<div class="bar"><div class="lb"><b>账号活跃（更新稳定性）</b><span>~10%</span></div><div class="trk"><div class="fil" style="width:10%"></div></div></div>
+<p style="font-size:12.5px;color:var(--ink-3);margin-top:-2px">* 各项为独立评估维度，非加总为 100%。方向参考，非官方公式。</p>
+
+<h3>四个推荐入口，都是免费曝光</h3>
+<div class="tw">
+<table>
+<thead><tr><th style="width:150px">入口</th><th>说明</th><th style="width:210px">你要做什么</th></tr></thead>
+<tbody>
+<tr><td><b>看一看</b></td><td>最大的公域推荐入口。用户下拉「看一看」，看到算法推荐内容；好友点了在看，会出现在「朋友在看」</td><td>把在看率做起来，这是社交杠杆的核心</td></tr>
+<tr><td><b>文章底部推荐</b></td><td>读完一篇文章后，「喜欢此内容的人还喜欢」会推荐同类文章</td><td>内容垂直，标签清晰</td></tr>
+<tr><td><b>订阅号消息流</b></td><td>已关注用户的消息列表里，文章排序受互动数据影响</td><td>提升常读用户比例</td></tr>
+<tr><td><b>小绿书底部推荐</b></td><td>发布图文消息后，底部推荐同类图文</td><td>把清单/对照表做成图文，一稿两用</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>三条对你特别关键的事实</h3>
+<div class="card gold">
+  <p><strong>1. 搜一搜是免费的长尾流量池。</strong>日活已过 3 亿。用户是带着问题来搜的（「红酒怎么选」「100 元红酒推荐」「贺兰山东麓红酒怎么样」）。一篇优质旧文的推荐生命周期可达 7 天到数月，是普通文章的十倍以上。</p>
+  <p><strong>2. 「贺兰山东麓」这个关键词几乎是空的。</strong>我实测搜了同赛道文章：搜索结果里几乎全是宁夏广电、银川晚报、云酒头条这类官方和行业通稿，<em>没有一篇是消费者视角的个人内容</em>。而「红酒 + 口粮酒」这个词在公众号里基本被白酒占位（四特酒、汾酒）。这是你的两个现成流量洼地。</p>
+  <p><strong>3. 你不需要先涨粉再涨阅读。</strong>算法面前千粉和万粉机会均等。曾有粉丝不到一千的小号，单篇被推 3 万多阅读。你要做的是让算法"认出"你，而不是攒人头。</p>
+</div>
+
+<hr>
+
+<!-- ============ 2 ============ -->
+<h2 class="sec"><span class="num">02</span>账号基建：7 项一次性设置</h2>
+<p class="sec-sub">这 7 项做完，之后每篇文章都自动受益，属最高性价比动作</p>
+
+<div class="tw">
+<table>
+<thead><tr><th style="width:34px">#</th><th style="width:120px">项目</th><th>怎么设</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><b>账号名</b></td><td>必须含搜索关键词，让搜一搜能捞到你。建议方向：含「红酒 / 葡萄酒 / 贺兰山东麓 / 品酒」中至少一个核心词 + 一个人格化词（如「老王」「小雨儿」）。<br>❌ 不要用纯情绪名（如「微醺的夜」）——搜不到</td></tr>
+<tr><td>2</td><td><b>账号简介</b></td><td>一句话讲清「你是谁 + 关注能得到什么」。<br>示例：<em>前阿里云工程效率主管，宁夏银川人。用写代码的逻辑帮你选红酒，从贺兰山东麓到全球产区，让小白喝懂不踩坑。</em></td></tr>
+<tr><td>3</td><td><b>头像</b></td><td>真人出镜或人物剪影 + 酒杯/葡萄元素。真人头像的信任度远高于 Logo。</td></tr>
+<tr><td>4</td><td><b>关注自动回复</b></td><td>三条内容：① 一句人设自我介绍 ② 一份见面礼（选酒对照表 / 产区速查表，回复关键词领取）③ 菜单导航提示。<br>示例：<em>你好，我是小雨儿，银川人，做了 18 年技术，现在用写代码的逻辑帮你选红酒。回复【口粮酒】，我把自己的回购清单发你；回复【产区】，领 8 大产区速查表。</em></td></tr>
+<tr><td>5</td><td><b>菜单栏</b></td><td>见下方三栏架构表。<b>新号最容易忽略、但对转化最关键的一环</b></td></tr>
+<tr><td>6</td><td><b>关键词自动回复</b></td><td>见下方关键词表。每一个关键词触发都是一次有效互动信号</td></tr>
+<tr><td>7</td><td><b>开通原创 + 留言</b></td><td>留言是与读者互动的唯一官方入口，也是算法看重的中权重互动信号。务必开通并在每篇引导留言</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>菜单栏三栏架构</h3>
+<div class="tw">
+<table>
+<thead><tr><th style="width:130px">一级菜单</th><th style="width:180px">二级菜单</th><th>指向内容 / 作用</th></tr></thead>
+<tbody>
+<tr><td rowspan="3"><b>选酒工具</b><br><span style="font-size:12px;color:#999">（干货沉淀）</span></td><td>新手选酒公式</td><td>《3步用AI选口粮酒》这类流程文，新读者第一次来就能拿走价值</td></tr>
+<tr><td>8大产区速查表</td><td>资源型长文，收藏率最高，靠菜单反复曝光</td></tr>
+<tr><td>选酒避坑清单</td><td>痛点合集，承接搜索流量</td></tr>
+<tr><td rowspan="3"><b>贺兰山东麓</b><br><span style="font-size:12px;color:#999">（差异化护城河）</span></td><td>产区地图 + 酒庄攻略</td><td>独家资源，外面搜不到的本地人内容</td></tr>
+<tr><td>本地人酒单</td><td>你的回购清单，直接指向转化</td></tr>
+<tr><td>酒庄探访日记</td><td>系列内容，养常读用户</td></tr>
+<tr><td rowspan="3"><b>找我</b><br><span style="font-size:12px;color:#999">（转化出口）</span></td><td>我的选酒小店</td><td>淘宝店铺链接</td></tr>
+<tr><td>加我微信</td><td>个人号 / 社群二维码</td></tr>
+<tr><td>品鉴会报名</td><td>线下活动报名入口，闭环的最后一环</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>关键词自动回复表</h3>
+<div class="tw">
+<table>
+<thead><tr><th style="width:110px">关键词</th><th>自动回复内容</th><th style="width:110px">埋在哪些文章</th></tr></thead>
+<tbody>
+<tr><td><b>口粮酒</b></td><td>回购清单（含酒款、价格、真实体感）+ 小店链接</td><td>所有选酒类文章</td></tr>
+<tr><td><b>产区</b></td><td>8 大产区速查表（可保存图）</td><td>产区科普类</td></tr>
+<tr><td><b>入门</b></td><td>红酒入门路线图 + 免费资源包</td><td>新手向内容</td></tr>
+<tr><td><b>酒庄</b></td><td>贺兰山东麓酒庄地图 + 拜访攻略</td><td>本地内容</td></tr>
+<tr><td><b>品鉴会</b></td><td>近期场次 + 报名方式</td><td>活动相关</td></tr>
+<tr><td><b>避坑</b></td><td>选酒避坑清单</td><td>痛点/反常识类</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>固定合集标签体系（每篇挂满 5 个）</h3>
+<p>合集标签是算法判断你内容领域的核心依据。<strong>不要每篇随手乱挂，要固定同一套</strong>，挂得越一致，标签越清晰，推荐越精准。</p>
+<p>
+<span class="tag">#红酒入门</span><span class="tag">#贺兰山东麓</span><span class="tag">#口粮酒推荐</span><span class="tag">#选酒避坑</span><span class="tag">#宁夏葡萄酒</span>
+</p>
+<div class="card red">
+  <p><strong>红线：一个账号只做一个领域。</strong>不要混发情绪随笔、职场感悟、育儿日常。标签一乱，算法就不知道该把你推给谁，推荐直接归零。</p>
+</div>
+
+<hr>
+
+<!-- ============ 3 ============ -->
+<h2 class="sec"><span class="num">03</span>选题：双轨制，一条吃搜索，一条吃推荐</h2>
+<p class="sec-sub">只做一种类型的选题，流量结构就是瘸的</p>
+
+<h3>轨道 A：搜索常青轨（吃搜一搜长尾）</h3>
+<p>这类选题写一次可以吃几个月甚至更久。标题里必须含用户真实搜索的长尾词，正文用分点、问答结构写，方便 AI 检索提取。</p>
+<div class="tw">
+<table>
+<thead><tr><th style="width:100px">词类</th><th>关键词</th></tr></thead>
+<tbody>
+<tr><td><b>核心词</b></td><td><span class="tag">红酒怎么选</span><span class="tag">红酒入门</span><span class="tag">红酒推荐</span><span class="tag">口粮酒</span><span class="tag">百元红酒</span></td></tr>
+<tr><td><b>场景词</b></td><td><span class="tag">送礼红酒</span><span class="tag">宴请红酒</span><span class="tag">纪念日红酒</span><span class="tag">红酒配中餐</span><span class="tag">家庭品鉴会</span></td></tr>
+<tr><td><b>地域词</b></td><td><span class="tag r">贺兰山东麓</span><span class="tag r">宁夏葡萄酒</span><span class="tag r">宁夏红酒</span><span class="tag r">银川酒庄</span></td></tr>
+<tr><td><b>避坑词</b></td><td><span class="tag">红酒不踩坑</span><span class="tag">红酒智商税</span><span class="tag">挂杯</span><span class="tag">封蜡</span><span class="tag">红酒年份</span></td></tr>
+<tr><td><b>长尾问答</b></td><td><span class="tag">红酒开瓶后能放几天</span><span class="tag">红酒单宁是什么</span><span class="tag">红酒怎么保存</span><span class="tag">红酒甜度怎么分</span></td></tr>
+</tbody>
+</table>
+</div>
+<div class="quote">
+<b>操作技巧：</b>去微信搜一搜输入框打「红酒」，看它自动弹出的下拉长尾词——那些是真实搜索需求，每一条都可以做成一个选题。
+</div>
+
+<h3>轨道 B：情绪推荐轨（吃算法推荐池）</h3>
+<p>这类选题靠共鸣、争议、反差来拉动分享和在看——那两个 35% 的权重指标。你的账号有三个现成的情绪燃料：</p>
+<ul class="clean">
+  <li><strong>身份反差</strong>：前阿里云工程效率主管 → 卖红酒的。这个落差本身就是故事。</li>
+  <li><strong>地域视角</strong>：宁夏本地人讲贺兰山东麓，天然带着"内部人"的可信感。全网同赛道几乎没人占这个位。</li>
+  <li><strong>反常识</strong>：挂杯多≠好酒、封蜡≠高档、越贵≠越好喝。断言必须有依据，但标题要敢下判断。</li>
+</ul>
+
+<h3>12 周选题排期（10/6 启动，每周 2 篇）</h3>
+<p>固定节奏：<strong>周二 20:00 发工具/干货篇（冲收藏和搜索），周五 21:00 发故事/争议篇（冲分享和在看）</strong>。</p>
+
+<div class="week">
+  <div class="hd">第 1 周 ｜ 10/6 - 10/12　目标：立标签、立人设</div>
+  <div class="bd">
+    <div class="row"><div class="d">10/6 二</div><div class="c"><b>《红酒怎么选不踩坑？超市里就能用的 5 个判断动作》</b><br><span class="tag r">搜索常青</span><span class="tag">痛点</span> 首篇必须把「红酒怎么选」打进标题，给算法定标签</div></div>
+    <div class="row"><div class="d">10/9 五</div><div class="c"><b>《35 岁转行卖酒，我在酒窖里重新找到了写代码的手感》</b><br><span class="tag">共鸣</span><span class="tag">立人设</span> 国庆余温，假期阅读氛围适合故事，评论区回复率会是全月最高</div></div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="hd">第 2 周 ｜ 10/13 - 10/19　目标：拿到第一批收藏</div>
+  <div class="bd">
+    <div class="row"><div class="d">10/13 二</div><div class="c"><b>《100 元预算能买到什么红酒？我实测 12 款，只留下这 4 款》</b><br><span class="tag r">搜索常青</span><span class="tag">数字+证据</span> 真实酒款、真实价格、真实体感——你的可信度在此建立</div></div>
+    <div class="row"><div class="d">10/16 五</div><div class="c"><b>《挂杯越多≠酒越好，这条流传最广的"常识"是错的》</b><br><span class="tag">反常识</span><span class="tag">争议</span> 争议点最低成本、最高传播，用来撬动在看</div></div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="hd">第 3 周 ｜ 10/20 - 10/26　目标：把贺兰山东麓的空白位占住</div>
+  <div class="bd">
+    <div class="row"><div class="d">10/20 二</div><div class="c"><b>《3 分钟看懂红酒酒标：认准这 3 个位置，选酒基本不出错》</b><br><span class="tag r">搜索常青</span><span class="tag">工具</span> 可保存型内容，收藏率高</div></div>
+    <div class="row"><div class="d">10/23 五</div><div class="c"><b>《贺兰山东麓到底什么水平？我拿它和波尔多 200 元档做了盲测》</b><br><span class="tag r">地域</span><span class="tag">对比</span><span class="tag">争议</span> 独占性最强的一篇，全网同赛道没有个人视角的对比内容</div></div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="hd">第 4 周 ｜ 10/27 - 11/2　目标：沉淀资源型长尾</div>
+  <div class="bd">
+    <div class="row"><div class="d">10/27 二</div><div class="c"><b>《一张表看懂 8 大产区：新手照着买就不会错（建议收藏）》</b><br><span class="tag r">资源</span><span class="tag">搜索常青</span> 长尾流量发动机，写完可长期置顶在菜单</div></div>
+    <div class="row"><div class="d">10/30 五</div><div class="c"><b>《被导购忽悠了 3 年，我总结出 5 句防忽悠话术》</b><br><span class="tag">痛点</span><span class="tag">共鸣</span> 痛点型最容易出高点击</div></div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="hd">第 5-6 周 ｜ 11/3 - 11/16　目标：堆内容量，覆盖搜索词</div>
+  <div class="bd">
+    <div class="row"><div class="d">11/3 二</div><div class="c"><b>《宁夏人私藏的 5 款百元内宝藏酒，第 3 款我回购了 10 次》</b> <span class="tag r">地域</span><span class="tag">清单</span></div></div>
+    <div class="row"><div class="d">11/6 五</div><div class="c"><b>《别再追年份了！90% 的红酒最佳饮用期只有出厂后 3 年》</b> <span class="tag">反常识</span></div></div>
+    <div class="row"><div class="d">11/10 二</div><div class="c"><b>《红酒开瓶后能放几天？这张保存时间表建议存手机》</b> <span class="tag r">长尾问答</span><span class="tag">资源</span></div></div>
+    <div class="row"><div class="d">11/13 五</div><div class="c"><b>《第一次带家乡酒见杭州老同事，他们说：宁夏还有这？》</b> <span class="tag">共鸣</span> <span style="color:#C0392B">双十一节点</span></div></div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="hd">第 7-8 周 ｜ 11/17 - 11/30　目标：场景化内容，承接礼赠需求</div>
+  <div class="bd">
+    <div class="row"><div class="d">11/17 二</div><div class="c"><b>《纪念日/送人选酒对照表：预算 × 场景一次配齐》</b> <span class="tag r">场景</span><span class="tag">资源</span></div></div>
+    <div class="row"><div class="d">11/20 五</div><div class="c"><b>《封蜡≠高档酒，这 3 个"高端信号"其实都是营销》</b> <span class="tag">反常识</span></div></div>
+    <div class="row"><div class="d">11/24 二</div><div class="c"><b>《红酒入门路线图：从 0 到能跟品鉴师聊 10 分钟（附资源包）》</b> <span class="tag r">资源</span> 公众号号一置顶长文</div></div>
+    <div class="row"><div class="d">11/27 五</div><div class="c"><b>《国产红酒都是差的？我在贺兰山东麓盲测翻车了》</b> <span class="tag r">地域</span><span class="tag">反常识</span></div></div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="hd">第 9-10 周 ｜ 12/1 - 12/14　目标：开始挂转化出口</div>
+  <div class="bd">
+    <div class="row"><div class="d">12/1 二</div><div class="c"><b>《请客吃饭拿不出手？宴请选酒最怕的 3 个尴尬瞬间》</b> <span class="tag">痛点</span><span class="tag r">场景</span></div></div>
+    <div class="row"><div class="d">12/4 五</div><div class="c"><b>《宁夏本地人才走的酒庄直营渠道，外地基本买不到》</b> <span class="tag r">地域</span><span class="tag">稀缺</span> <span style="color:#2F6B37">此篇起可挂小店链接</span></div></div>
+    <div class="row"><div class="d">12/8 二</div><div class="c"><b>《红酒配中餐怎么配？6 道家常菜对照表》</b> <span class="tag r">长尾问答</span><span class="tag">场景</span></div></div>
+    <div class="row"><div class="d">12/11 五</div><div class="c"><b>《从被品鉴师问倒，到聊满半小时——我这半年走过的路》</b> <span class="tag">共鸣</span></div></div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="hd">第 11-12 周 ｜ 12/15 - 12/28　目标：年货节点 + 转化冲刺</div>
+  <div class="bd">
+    <div class="row"><div class="d">12/15 二</div><div class="c"><b>《在家办一场品鉴会：我的完整 SOP，成本不到 200 块》</b> <span class="tag r">资源</span><span class="tag">场景</span> 顺带为线下品鉴会引流</div></div>
+    <div class="row"><div class="d">12/18 五</div><div class="c"><b>《银川人从小喝到大的那款酒，出了宁夏几乎见不到》</b> <span class="tag r">地域</span><span class="tag">稀缺</span></div></div>
+    <div class="row"><div class="d">12/22 二</div><div class="c"><b>《年货/元旦送礼选酒日历（可打印）》</b> <span class="tag r">场景</span><span class="tag">资源</span> <span style="color:#C0392B">年货节点</span></div></div>
+    <div class="row"><div class="d">12/25 五</div><div class="c"><b>《离开大厂才发现：选红酒和做项目一样，都是信息差生意》</b> <span class="tag">共鸣</span><span class="tag">立人设</span></div></div>
+  </div>
+</div>
+
+<div class="card gold">
+  <p><strong>复用原则：</strong>同一份素材可以吃三遍。比如「贺兰山东麓 vs 波尔多」这一个素材，可以出对比型（正文）、盲测型（视频）、图鉴型（图文），三个形态各发一次，不用重新找料。</p>
+</div>
+
+<hr>
+
+<!-- ============ 4 ============ -->
+<h2 class="sec"><span class="num">04</span>标题：决定 20% 点击率的临门一脚</h2>
+<p class="sec-sub">公众号标题和小红书是两套逻辑，不要照搬</p>
+
+<h3>两个硬性规则</h3>
+<ul class="check">
+  <li><strong>搜索关键词必须出现在标题前 15 个字内</strong>——微信搜一搜和推荐算法都优先解析标题前段。</li>
+  <li><strong>每篇至少写 8 个候选标题再选。</strong>写一个是碰运气，写八个是筛选。</li>
+</ul>
+
+<h3>7 个公式 + 红酒实例</h3>
+<div class="tw">
+<table>
+<thead><tr><th style="width:110px">公式</th><th>结构</th><th style="width:270px">红酒实例</th></tr></thead>
+<tbody>
+<tr><td><b>搜索型</b></td><td>核心搜索词 + 场景 + 承诺</td><td>《红酒怎么选不踩坑？超市里就能用的 5 个判断动作》</td></tr>
+<tr><td><b>数字型</b></td><td>具体数字 + 低成本 + 明确交付</td><td>《100 元预算买红酒，我实测 12 款，只留下这 4 款》</td></tr>
+<tr><td><b>反常识型</b></td><td>大众认知 + 直接否定 + 真相</td><td>《挂杯越多≠酒越好，这条"常识"骗了太多人》</td></tr>
+<tr><td><b>身份型</b></td><td>限定身份 + 提醒 + 避坑</td><td>《宁夏人提醒你：买贺兰山东麓红酒，这 3 个坑别踩》</td></tr>
+<tr><td><b>场景型</b></td><td>具体场合 + 尴尬 + 解法</td><td>《请客吃饭拿不出手？宴请选酒最怕的 3 个瞬间》</td></tr>
+<tr><td><b>对比型</b></td><td>A vs B + 结果意外</td><td>《200 元档盲测：贺兰山东麓 VS 波尔多，结果有点意外》</td></tr>
+<tr><td><b>共鸣型</b></td><td>第一人称 + 转折 + 结果</td><td>《35 岁转行卖酒，我在酒窖里重新找到了写代码的手感》</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>避雷清单</h3>
+<ul class="cross">
+  <li>纯陈述句：《我的日常感悟》《说说红酒》——点击率通常低于 5%</li>
+  <li>纯标题党无内容支撑——打开率高但完读率崩，算法会立刻停推，还会掉粉</li>
+  <li>标题超过 24 个字——信息流里会被截断，关键词也挤不进前段</li>
+  <li>堆砌形容词和空话（「震撼」「绝了」「必看」）——不如一个具体场景</li>
+</ul>
+
+<hr>
+
+<!-- ============ 5 ============ -->
+<h2 class="sec"><span class="num">05</span>完读率：35% 的最高权重怎么拿</h2>
+<p class="sec-sub">这是权重第一的指标，也是你现在最薄弱的一环</p>
+
+<div class="card red">
+  <p><strong>算法判定规则：</strong>用户点开后阅读进度未达 30% 就退出，系统直接把内容标记为「低质」，推荐立即停止。反过来，完读率超过 65% 的文章会被持续放大推荐。</p>
+</div>
+
+<h3>公众号版 6 段式骨架（1200-1800 字）</h3>
+<div class="tw">
+<table>
+<thead><tr><th style="width:34px">段</th><th style="width:100px">模块</th><th style="width:90px">字数</th><th>任务与写法</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><b>钩子</b></td><td>80-120</td><td>用一个具体场景或一句反常识结论把人留住。<b>不要剧透答案</b>，制造信息缺口</td></tr>
+<tr><td>2</td><td><b>共情</b></td><td>100-150</td><td>「我也这样过」——建立同类感。你的转型经历是天然素材</td></tr>
+<tr><td>3</td><td><b>干货主体</b></td><td>600-900</td><td>分 3 点，每点 = 结论 + 理由 + 可执行动作。这是文章价值的主体</td></tr>
+<tr><td>4</td><td><b>案例 / 证据</b></td><td>200-300</td><td>真实酒款、真实价格、真实体感。前大厂「逻辑驱动」的可信感靠这里落地</td></tr>
+<tr><td>5</td><td><b>行动清单</b></td><td>100-150</td><td>可保存的清单 / 对照表 / 步骤图，拉动收藏率</td></tr>
+<tr><td>6</td><td><b>互动收口</b></td><td>80-120</td><td>提问 + 关键词钩子 + 在看引导 + 下一篇预告</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>排版规范（手机端）</h3>
+<ul class="check">
+  <li><strong>每段不超过 3 行</strong>（手机屏幕约 18-20 字/行），超过就拆段</li>
+  <li><strong>每 300-400 字插一张图</strong>，全文 4-6 张用于切分节奏</li>
+  <li>小标题加粗，金句可加粗或加底色块，但<strong>一篇文章最多 3 处高亮</strong>，多了等于没有</li>
+  <li>少用花哨边框、彩色字体——视觉疲劳会直接拉低完读</li>
+  <li>正文 15px、行距 1.8-1.9，这是公众号最舒服的阅读参数</li>
+</ul>
+
+<h3>封面与配图规范</h3>
+<div class="tw">
+<table>
+<thead><tr><th style="width:120px">项目</th><th>规格</th></tr></thead>
+<tbody>
+<tr><td><b>头条封面</b></td><td>900×383（2.35:1）。重点内容放中间，两端会被裁切</td></tr>
+<tr><td><b>次条封面</b></td><td>200×200（1:1）</td></tr>
+<tr><td><b>封面文字</b></td><td>不超过 10 个字。大字会遮挡画面，效果反而差</td></tr>
+<tr><td><b>风格统一</b></td><td>长期固定色调，形成账号辨识度。你现有的"深色酒红 + 金色"方向很好，建议固化成模板</td></tr>
+<tr><td><b>优先用实拍图</b></td><td>自己的酒窖、酒杯、贺兰山东麓产区、品鉴会现场——原创实拍比网图更容易获得推荐</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>发布时间</h3>
+<p>白领受众的两个高峰：<strong>早上 7:30-8:30</strong>（通勤）和<strong>晚上 21:00-22:30</strong>（睡前）。</p>
+<p>建议先固定<strong>周二 20:00 + 周五 21:00</strong> 发两周，再根据后台「图文分析」里的实际阅读时段微调。<em>关键是固定，不要三天打鱼两天晒网</em>——固定节奏才能养出常读用户，而常读用户比例直接决定账号权重。</p>
+
+<hr>
+
+<!-- ============ 6 ============ -->
+<h2 class="sec"><span class="num">06</span>互动活跃：把 35% 的分享权重拿下来</h2>
+<p class="sec-sub">这是你从"几十阅读"变成"几百上千阅读"最快的杠杆</p>
+
+<div class="card gold">
+  <p><strong>核心逻辑：</strong>一个人点了「在看」，他的所有微信好友都能在「看一看 → 朋友在看」里看到你的文章。这是公众号区别于所有其他平台的社交杠杆——<em>你不需要有粉丝，你需要有人愿意点在看</em>。</p>
+</div>
+
+<h3>文末互动三件套（每篇必带，直接套用）</h3>
+<div class="code"><span class="k">① 具体提问</span>（不要问"你怎么看"，要问具体的事）
+你上次买红酒踩过最大的坑是什么？评论区说说，我挑 3 位送一瓶贺兰山东麓的入门款。
+
+<span class="k">② 关键词钩子</span>（触发自动回复 = 一次有效互动信号）
+回复【口粮酒】，我把自己的回购清单发你，里面标了每款的价格和真实体感。
+
+<span class="k">③ 在看引导</span>（给一个理由，不要只说"求在看"）
+如果这篇帮你省下了一笔冤枉钱，点个在看，让更多人选酒不踩坑。</div>
+
+<h3>留言区运营 SOP</h3>
+<ol>
+  <li><strong>发文后 30 分钟内，自己先评论 3 条</strong>——用来定方向和带节奏。比如「第 2 条我踩过坑，当年花了 800 块」，读者更容易跟着聊。</li>
+  <li><strong>每条留言必回，且要回出信息量</strong>——不是「谢谢支持」，而是「你那个价位段可以看看 XX，性价比更高」。认真回复的号，留言量会持续上涨。</li>
+  <li><strong>置顶一条引导性问题</strong>，让后来的读者一眼看到可以聊什么。</li>
+  <li><strong>把优质留言做成下期选题</strong>——留言区是最真实的选题矿，读者问什么你就写什么。</li>
+</ol>
+
+<h3>四个活跃度机制（配合使用）</h3>
+<div class="tw">
+<table>
+<thead><tr><th style="width:130px">机制</th><th>怎么做</th><th style="width:150px">解决什么</th></tr></thead>
+<tbody>
+<tr><td><b>系列连载</b></td><td>把内容做成「番外」，比如「贺兰山东麓酒庄探访日记 01/02/03」。系列内容会让人主动回来追更</td><td>养常读用户</td></tr>
+<tr><td><b>固定栏目</b></td><td>比如每周五回复读者提问（「周五答疑」），形成期待感</td><td>提升打开率</td></tr>
+<tr><td><b>微信社群</b></td><td>文章末尾导流进群，群里每周固定一天做互动（猜价格、盲品投票、限时福利）</td><td>提升粘性 + 直接转化</td></tr>
+<tr><td><b>视频号联动</b></td><td>文章里插入视频号内容（比如 60 秒开瓶实测），视频号主页也挂公众号，双向导流</td><td>微信生态内互推</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+
+<!-- ============ 7 ============ -->
+<h2 class="sec"><span class="num">07</span>涨粉与转化：公众号是承接池，不是流量源</h2>
+<p class="sec-sub">这一条认知不转变，前面所有优化都会事倍功半</p>
+
+<div class="card red">
+  <p><strong>冷启动期最重要的一句话：</strong>公众号本身不产生流量，它承接流量。你的流量在外面——小红书、视频号、淘宝、线下品鉴会、朋友圈。把外面的流量接进来，再用内容和互动把它变成资产。</p>
+</div>
+
+<h3>外部导流矩阵</h3>
+<div class="tw">
+<table>
+<thead><tr><th style="width:130px">渠道</th><th>具体动作</th><th style="width:150px">备注</th></tr></thead>
+<tbody>
+<tr><td><b>小红书</b><br><span style="font-size:12px;color:#999">（主力）</span></td><td>主页简介写「公众号同名，回复【口粮酒】领清单」；每篇笔记评论区置顶同类引导；主页挂公众号入口</td><td>你已有四周执行手册，两条线并行</td></tr>
+<tr><td><b>视频号</b></td><td>发 30-60 秒选酒短视频（开瓶、盲测、酒庄现场），主页挂公众号</td><td>微信生态内互导，转化路径最短</td></tr>
+<tr><td><b>淘宝店铺</b></td><td>包裹卡印二维码 + 「关注领选酒对照表」</td><td>已购用户复购池，信任度最高</td></tr>
+<tr><td><b>线下品鉴会</b></td><td>现场扫码关注 + 入群，活动照片做成公众号内容再传播</td><td>闭环的最后一环</td></tr>
+<tr><td><b>朋友圈 / 微信群</b></td><td>每篇转发时配一句个人化推荐语，不要干巴巴丢链接</td><td>启动期的基本盘</td></tr>
+<tr><td><b>同行互推</b></td><td>找 2-3 个同量级的美食、生活方式、职场号互相推荐</td><td>破圈，粉丝画像重合度高</td></tr>
+<tr><td><b>搜一搜</b></td><td>标题和正文埋真实搜索词</td><td>唯一不需要外部动作的免费流量</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>关注诱饵（裂变钩子）</h3>
+<p>给一个「不加关注就拿不到」的东西。建议做 3 个，滚动使用：</p>
+<ul class="clean">
+  <li><strong>《8 大产区速查表》</strong>——可保存图片，搜索流量最爱</li>
+  <li><strong>《选酒避坑清单》</strong>——痛点驱动，转发率高</li>
+  <li><strong>《贺兰山东麓酒庄地图 + 拜访攻略》</strong>——独家资源，外面搜不到，稀缺性最强</li>
+</ul>
+
+<h3>转化路径（越短越好）</h3>
+<div class="code">文章 → 菜单/关键词 → 加微信 → 社群 → 淘宝小店 / 线下品鉴会 → 复购
+                ↘ 直接跳转小店（短路径，适合已信任的老读者）</div>
+
+<hr>
+
+<!-- ============ 8 ============ -->
+<h2 class="sec"><span class="num">08</span>数据看板与复盘规则</h2>
+<p class="sec-sub">每周一花 15 分钟填一次，就知道下一步该改什么</p>
+
+<div class="tw">
+<table>
+<thead><tr><th>指标</th><th style="width:90px">第1周</th><th style="width:90px">第2周</th><th style="width:90px">第3周</th><th style="width:90px">第4周</th></tr></thead>
+<tbody>
+<tr><td>总阅读量</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>平均完读率 <span class="tag">核心</span></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>分享次数 <span class="tag">核心</span></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>在看数</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>收藏数</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>留言数</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>净增粉丝</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>菜单点击次数</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>关键词触发次数</td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>诊断决策规则（对着数据找病因）</h3>
+<div class="tw">
+<table>
+<thead><tr><th style="width:190px">数据表现</th><th>病因</th><th style="width:190px">下一步改什么</th></tr></thead>
+<tbody>
+<tr><td>阅读低 + 完读高</td><td>内容没问题，是入口问题</td><td>改标题、封面、发布时间、埋搜索词</td></tr>
+<tr><td>阅读低 + 完读低</td><td>标签不清，算法没推；或选题不对</td><td>检查合集标签是否固定、内容是否垂直</td></tr>
+<tr><td>阅读高 + 完读低</td><td>标题党，短期骗到点击</td><td>警惕：算法会停推且掉粉，立即调整</td></tr>
+<tr><td>完读高 + 分享低</td><td>缺情绪钩子或争议点</td><td>加故事、加反差结论、加身份视角</td></tr>
+<tr><td>分享高 + 涨粉低</td><td>缺关注引导和福利钩子</td><td>文末补关键词钩子，菜单加关注诱饵</td></tr>
+<tr><td>涨粉高 + 留言低</td><td>缺互动提问</td><td>补互动三件套，自己先评论带节奏</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card green">
+  <p><strong>健康基准线（第 4 周起对照）：</strong>完读率 50%+ ｜ 分享率 3%+ ｜ 在看率 2%+ ｜ 留言率 1%+ ｜ 周净增粉 20+。<br>冷启动期第 1-2 周不达线是正常的，重点看<em>周环比是否在涨</em>。</p>
+</div>
+
+<hr>
+
+<!-- ============ 9 ============ -->
+<h2 class="sec"><span class="num">09</span>30 天执行清单</h2>
+<p class="sec-sub">按顺序做，不要跳步</p>
+
+<div class="week">
+  <div class="hd">第 1 周 ｜ 基建周（不发文也要做完）</div>
+  <div class="bd">
+    <div class="row"><div class="d">Day 1</div><div class="c">核对/修改账号名（含核心搜索词）、简介、头像</div></div>
+    <div class="row"><div class="d">Day 2</div><div class="c">配置关注自动回复 + 6 个关键词自动回复</div></div>
+    <div class="row"><div class="d">Day 3</div><div class="c">搭建三栏菜单，把已有文章挂进去</div></div>
+    <div class="row"><div class="d">Day 4</div><div class="c">建立固定合集标签体系（5 个），后续每篇按此挂载</div></div>
+    <div class="row"><div class="d">Day 5</div><div class="c">做 1 张封面模板 + 3 张配图素材（可用 AI 生成）</div></div>
+    <div class="row"><div class="d">Day 6</div><div class="c">写第 1 篇《红酒怎么选不踩坑》，跑完 6 段式骨架</div></div>
+    <div class="row"><div class="d">Day 7</div><div class="c">发布 + 自己先评论 3 条 + 朋友圈/小红书同步导流</div></div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="hd">第 2 周 ｜ 拿到第一批数据</div>
+  <div class="bd">
+    <div class="row"><div class="d">周一</div><div class="c">填数据看板，判断第 1 篇是"入口问题"还是"内容问题"</div></div>
+    <div class="row"><div class="d">周二</div><div class="c">发第 2 篇（工具/干货类），标题写 8 个候选择优</div></div>
+    <div class="row"><div class="d">周三</div><div class="c">小红书发布同主题内容，简介引导公众号</div></div>
+    <div class="row"><div class="d">周四</div><div class="c">回复所有留言，把优质留言记进选题库</div></div>
+    <div class="row"><div class="d">周五</div><div class="c">发第 3 篇（故事/争议类），重点冲在看和分享</div></div>
+    <div class="row"><div class="d">周末</div><div class="c">把两篇内容做成图文（小绿书），一稿两用</div></div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="hd">第 3 周 ｜ 打通外部导流</div>
+  <div class="bd">
+    <div class="row"><div class="d">重点1</div><div class="c">做出第一个关注诱饵（选区速查表），挂进菜单和自动回复</div></div>
+    <div class="row"><div class="d">重点2</div><div class="c">发 2 篇，其中 1 篇必须打地域词（贺兰山东麓），抢占空白位</div></div>
+    <div class="row"><div class="d">重点3</div><div class="c">找 2 个同量级号谈互推</div></div>
+    <div class="row"><div class="d">重点4</div><div class="c">拍 1 条视频号短视频，主页挂公众号</div></div>
+  </div>
+</div>
+
+<div class="week">
+  <div class="hd">第 4 周 ｜ 复盘定方向</div>
+  <div class="bd">
+    <div class="row"><div class="d">重点1</div><div class="c">发 2 篇，其中 1 篇是资源型（可长期置顶）</div></div>
+    <div class="row"><div class="d">重点2</div><div class="c">拉 8 篇的完整数据，找出表现最好的 1 个类型和 1 个选题方向</div></div>
+    <div class="row"><div class="d">重点3</div><div class="c">把最佳类型的配比调到 50%，第 2 个月主攻这个方向</div></div>
+    <div class="row"><div class="d">重点4</div><div class="c">确定发布时间窗口（按后台图文分析的真实阅读时段）</div></div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ============ 10 ============ -->
+<h2 class="sec"><span class="num">10</span>接下来我可以帮你做的</h2>
+<p class="sec-sub">把方案变成成品，你不用自己动手</p>
+
+<div class="tw">
+<table>
+<thead><tr><th style="width:34px">#</th><th style="width:210px">我能做的</th><th>你只需要给我</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><b>建你的文风 DNA</b></td><td>5 篇你写过、自己满意的文章原文 → 我提炼 14 维文风画像，之后每篇初稿都按它写</td></tr>
+<tr><td>2</td><td><b>精准诊断现有内容</b></td><td>5 篇已发文章的<b>标题 + 阅读量 + 完读率 + 分享数</b> → 我算出你真正的短板在哪一环</td></tr>
+<tr><td>3</td><td><b>写第 1 篇完整初稿</b></td><td>确认选题（建议《红酒怎么选不踩坑》）→ 我出初稿 + 8 个候选标题 + 去 AI 味</td></tr>
+<tr><td>4</td><td><b>生成封面图和配图</b></td><td>确认视觉方向 → 我出头条封面（900×383）+ 内文配图</td></tr>
+<tr><td>5</td><td><b>排版并推送到公众号草稿箱</b></td><td>你已绑定公众号，我可以直接排版 + 推送草稿，你在手机上预览确认后发布</td></tr>
+<tr><td>6</td><td><b>做关注诱饵资源</b></td><td>「8 大产区速查表」或「选酒避坑清单」，我做成可保存的图片/PDF</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card wine">
+  <div class="t">最小启动建议</div>
+  <p>如果你今天只做三件事，就做这三件：</p>
+  <p><strong style="color:#fff">1.</strong> 把合集标签固定成那 5 个，从下一篇开始每篇挂满 —— 让算法第一次认出你。</p>
+  <p><strong style="color:#fff">2.</strong> 每篇文章文末加上「互动三件套」—— 这是撬动 35% 分享权重的最低成本动作。</p>
+  <p><strong style="color:#fff">3.</strong> 标题里必须有「红酒怎么选」这类真实搜索词 —— 吃搜一搜的免费长尾流量。</p>
+</div>
+
+<div class="foot">
+  <p class="l">—— 用写代码的逻辑，帮你选对红酒 ——</p>
+  <p>公众号运营破局作战手册 · 2026-10-01</p>
+</div>
+
+</div>
+</body>
+</html>
